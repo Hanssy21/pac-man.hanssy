@@ -1,0 +1,156 @@
+/* =====================================
+   PAC-MAN - ESTILOS
+   ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #11115c 0%,
+            #05051f 45%,
+            #000000 100%
+        );
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow: hidden;
+}
+
+/* =====================================
+   CONTENEDOR DEL JUEGO
+   ===================================== */
+
+.juego {
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+/* =====================================
+   TÍTULO
+   ===================================== */
+
+h1 {
+
+    color: #ffff00;
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 5px #ffff00,
+        0 0 10px #ffff00,
+        0 0 20px #ffcc00;
+}
+
+/* =====================================
+   CANVAS
+   ===================================== */
+
+.contenedor-canvas {
+
+    display: inline-block;
+
+    padding: 8px;
+
+    background: #000;
+
+    border: 4px solid #003bff;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 0 10px #003bff,
+        0 0 25px #003bff,
+        0 0 50px rgba(0, 59, 255, 0.5);
+}
+
+canvas {
+
+    display: block;
+
+    background: black;
+
+    width: 560px;
+
+    height: 392px;
+
+    image-rendering: pixelated;
+}
+
+/* =====================================
+   INSTRUCCIONES
+   ===================================== */
+
+.instrucciones {
+
+    margin-top: 18px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 5px white;
+}
+
+/* =====================================
+   RESPONSIVE
+   ===================================== */
+
+@media (max-width: 650px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .juego {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    canvas {
+
+        width: 100%;
+
+        height: auto;
+
+        max-width: 560px;
+    }
+
+    .contenedor-canvas {
+
+        width: 100%;
+
+        max-width: 576px;
+    }
+
+    .instrucciones {
+        font-size: 13px;
+    }
+}
