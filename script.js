@@ -443,6 +443,22 @@ function comerPunto() {
     console.log("⚡ POWER ACTIVADO");
 }
 }
+// =====================================
+// ACTUALIZAR PODER
+// =====================================
+
+function actualizarPoder() {
+
+    if (poderActivo && Date.now() >= tiempoPoder) {
+
+        poderActivo = false;
+
+        tiempoPoder = 0;
+
+        console.log("⚡ POWER TERMINADO");
+    }
+}
+
 
 // =====================================
 // DIBUJAR PAC-MAN
@@ -866,6 +882,8 @@ function actualizar() {
     );
 
     actualizarPacman();
+
+    actualizarPoder();
 
     actualizarFantasmas();
 
