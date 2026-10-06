@@ -26,7 +26,7 @@ let puntosRestantes = 0;
 let poderActivo = false;
 let tiempoPoder = 0;
 
-const DURACION_PODER = 7000; // 7 segundos
+const DURACION_PODER = 5000; // 5 segundos
 
 // =====================================
 // MAPA
@@ -456,6 +456,7 @@ function actualizarPoder() {
         tiempoPoder = 0;
 
         console.log("⚡ POWER TERMINADO");
+        console.log("poderActivo:", poderActivo);
     }
 }
 
