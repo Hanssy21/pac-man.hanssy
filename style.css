@@ -154,3 +154,66 @@ canvas {
         font-size: 13px;
     }
 }
+/* =====================================
+   CONTROLES PARA CELULAR
+   ===================================== */
+
+.controles-moviles {
+
+    display: none;
+
+    margin-top: 15px;
+
+    user-select: none;
+}
+
+.fila-flechas {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.flecha {
+
+    width: 60px;
+    height: 60px;
+
+    border: 3px solid #003bff;
+
+    border-radius: 12px;
+
+    background: #11115c;
+
+    color: #ffff00;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 8px #003bff,
+        0 0 15px rgba(0, 59, 255, 0.5);
+
+    touch-action: manipulation;
+
+    cursor: pointer;
+}
+
+.flecha:active {
+
+    background: #003bff;
+
+    transform: scale(0.95);
+}
+
+/* Mostrar controles en celular */
+
+@media (max-width: 650px) {
+
+    .controles-moviles {
+        display: block;
+    }
+}

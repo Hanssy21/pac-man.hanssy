@@ -256,6 +256,61 @@ document.addEventListener("keydown", (e) => {
             break;
     }
 });
+// =====================================
+// CONTROLES TÁCTILES
+// =====================================
+
+const botonesFlecha =
+    document.querySelectorAll(".flecha");
+
+botonesFlecha.forEach((boton) => {
+
+    boton.addEventListener("pointerdown", (e) => {
+
+        e.preventDefault();
+
+        const direccion =
+            boton.dataset.direccion;
+
+        switch (direccion) {
+
+            case "right":
+
+                pacman.dx = pacman.velocidad;
+                pacman.dy = 0;
+                pacman.direccion = 0;
+
+                break;
+
+            case "left":
+
+                pacman.dx = -pacman.velocidad;
+                pacman.dy = 0;
+                pacman.direccion = Math.PI;
+
+                break;
+
+            case "up":
+
+                pacman.dx = 0;
+                pacman.dy = -pacman.velocidad;
+                pacman.direccion = -Math.PI / 2;
+
+                break;
+
+            case "down":
+
+                pacman.dx = 0;
+                pacman.dy = pacman.velocidad;
+                pacman.direccion = Math.PI / 2;
+
+                break;
+        }
+
+    });
+
+});
+
 
 // =====================================
 // COLISIÓN CON MUROS
