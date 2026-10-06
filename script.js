@@ -20,6 +20,15 @@ let nivel = 1;
 let puntosRestantes = 0;
 
 // =====================================
+// PODER DE PAC-MAN
+// =====================================
+
+let poderActivo = false;
+let tiempoPoder = 0;
+
+const DURACION_PODER = 7000; // 7 segundos
+
+// =====================================
 // MAPA
 // =====================================
 
@@ -414,19 +423,25 @@ function comerPunto() {
         puntosRestantes--;
     }
 
-    if (celda === "o") {
+   if (celda === "o") {
 
-        mapa[fila] =
-            mapa[fila].substring(0, columna) +
-            " " +
-            mapa[fila].substring(columna + 1);
+    mapa[fila] =
+        mapa[fila].substring(0, columna) +
+        " " +
+        mapa[fila].substring(columna + 1);
 
-        score += 50;
+    score += 50;
 
-        puntosRestantes--;
+    puntosRestantes--;
 
-        console.log("POWER PELLET");
-    }
+    // Activar poder
+    poderActivo = true;
+
+    // Reiniciar el contador del poder
+    tiempoPoder = Date.now() + DURACION_PODER;
+
+    console.log("⚡ POWER ACTIVADO");
+}
 }
 
 // =====================================
@@ -538,9 +553,16 @@ class Fantasma {
             );
         }
 
-        ctx.closePath();
+          ctx.closePath();
 
-        ctx.fillStyle = this.color;
+        if (poderActivo) {
+
+            ctx.fillStyle = "blue";
+
+        } else {
+
+            ctx.fillStyle = this.color;
+        }
 
         ctx.fill();
 
